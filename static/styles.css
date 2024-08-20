@@ -1,0 +1,226 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #007bff; /* Основной цвет фона меню */
+    padding: 10px;
+    position: relative; /* Позиционирование для предотвращения перекрытия */
+    z-index: 1000; /* Убедиться, что меню находится поверх других элементов */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Центрирование элементов меню */
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff; /* Цвет текста в меню */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s; /* Плавный переход цвета фона и текста */
+}
+
+nav a:hover {
+    background-color: #0056b3; /* Цвет фона при наведении */
+    color: #fff; /* Цвет текста при наведении */
+}
+
+main {
+    padding: 20px;
+    display: flex; /* Используем flexbox для размещения колонок */
+    justify-content: space-between; /* Располагаем элементы по краям */
+    margin-top: 60px; /* Отступ сверху для меню */
+    flex-direction: column; /* Flexbox будет располагать элементы сверху вниз */
+}
+
+.page-title {
+    margin-bottom: 20px; /* Отступ снизу для заголовка */
+    font-size: 2em; /* Размер шрифта */
+    color: #7a66f1; /* Цвет текста */
+    text-align: center; /* Центрирование текста */
+    width: 100%; /* Ширина заголовка */
+    position: relative; /* Остается в естественном потоке документа */
+    z-index: 1; /* Заголовок должен быть выше других элементов */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+form {
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.09);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* стили для кнопок */
+button, .custom-file-upload label {
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста кнопки */
+    border: none; /* Убрать границу кнопки */
+    padding: 10px 20px; /* Отступы кнопки */
+    font-size: 16px; /* Размер шрифта кнопки */
+    border-radius: 4px; /* Закругление углов кнопки */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета */
+    display: inline-block; /* Сделать элемент блочным */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+button[type="submit"]:hover, .custom-file-upload label:hover {
+    background-color: #9200b3; /* Цвет кнопки при наведении */
+}
+
+/* Стили для кастомного элемента выбора файла */
+.custom-file-upload {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-file-upload input[type="file"] {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-file-upload label {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#fileName {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+/* Основной контейнер для страницы */
+.container {
+    display: flex;
+    margin: 20px auto;
+    max-width: 1000px;
+    padding: 20px;
+    width: 100%; /* Обеспечить использование полной ширины */
+    position: relative; /* Относительное позиционирование для колонки */
+}
+
+/* Колонка для RSS новостей */
+.rss-feed {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 25%; /* Ширина колонки RSS */
+    max-height: 80vh; /* Максимальная высота в процентах от высоты экрана */
+    overflow-y: auto; /* Прокрутка по вертикали */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 80px; /* Отступ сверху для меню и заголовка */
+    right: 20px; /* Отступ справа */
+    font-size: 14px; /* Размер шрифта в колонке */
+    z-index: 1000; /* Убедиться, что колонка находится поверх других элементов */
+}
+
+/* Основной контент */
+.main-content {
+    flex: 1; /* Заполняет оставшееся пространство */
+    margin-right: 30%; /* Отступ справа для предотвращения наложения на колонку RSS */
+}
+
+/* Блоки в основном контенте */
+.content-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px; /* Отступ между блоками */
+}
+
+h2 {
+    color: #007bff;
+}
+
+p {
+    color: #333;
+}
+
+a {
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.news-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+h1 {
+    text-align: center; /* Центрирование текста */
+    margin-top: 20px;   /* Отступ сверху для заголовка */
+    font-size: 2em;     /* Размер шрифта заголовка */
+    color: #007bff;     /* Цвет текста заголовка */
+}

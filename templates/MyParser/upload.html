@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Upload File{% endblock %}
+
+{% block content %}
+    <h1>Upload a file to parse</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="custom-file-upload">
+            <input type="file" id="fileInput" name="file" style="display: none;" />
+            <label for="fileInput" class="file-label">Choose File</label>
+            <span id="fileName">No file chosen</span>
+        </div>
+        <button type="submit">Upload</button>
+    </form>
+{% endblock %}

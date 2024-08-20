@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Convert File{% endblock %}
+
+{% block content %}
+    <h1>Convert a file</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="custom-file-upload">
+            <input type="file" name="file" id="file-convert">
+            <label for="file-convert">Choose file</label>
+            <span id="fileName-convert">No file chosen</span>
+        </div>
+        <button type="submit">Convert</button>
+    </form>
+{% endblock %}

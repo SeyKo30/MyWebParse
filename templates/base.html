@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MyWebParse{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <script src="{% static 'scripts.js' %}"></script>
+    {% include 'menu/menu.html' %}
+    <header>
+        <!-- Общие элементы заголовка -->
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <!-- Общие элементы подвала -->
+    </footer>
+
+</body>
+</html>

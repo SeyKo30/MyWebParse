@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Parsed Content{% endblock %}
+
+{% block content %}
+    <h1>File: {{ filename }}</h1>
+
+    {% if content %}
+        <h2>Parsed Content:</h2>
+        <pre>{{ content }}</pre> <!-- Используем <pre> для сохранения форматирования -->
+    {% else %}
+        <p class="error">No content to display.</p>
+    {% endif %}
+
+    <a href="{% url 'MyParser:upload_file' %}">Upload another file</a>
+{% endblock %}
